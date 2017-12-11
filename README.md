@@ -1,6 +1,8 @@
 # Unau
 Jeu de Uno.
 
+![Graph](http://www.tuks.ovh/github_webpages/Unau-no-rezo/Capture.png)
+
 ## Librairies python3 utilisées installées par défaut avec python3 
 - socket
 - time
@@ -23,6 +25,7 @@ Pour chaque partie
   - suivre les instructions pour chaque client
   - saisir 'go' pour lancer la partie sur le client 0
 
+## capture d'écran
 
 
 ### remarque de compréhension : 
