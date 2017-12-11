@@ -22,7 +22,7 @@ global Flow
 class ServerNet():
     '''Classe Serveur, sert d'interface entre certains threads et mes collègues
 
-    Par Joris Placette
+
     '''
 
     def __init__(self):  # initiallisation du thread de reception des nouveaux clients
@@ -42,7 +42,7 @@ class ServerNet():
 
         Quand deux clients s'identifient avec le même pseudonyme alors seul le dernier client connecté aura son ID associé avec le pseudonyme
 
-        Par Joris Placette
+          
         '''
 
         global MyClient
@@ -58,7 +58,7 @@ class ServerNet():
 class Guest(threading.Thread):
     '''Classe de gestion de Client individuellement.
 
-    Par Joris Placette
+
     '''
 
     def __init__(self, GuestID, Client, Address):  # initiallisation des variables de l'objet nouvellement crée
@@ -102,9 +102,9 @@ class Guest(threading.Thread):
         Flow(self.__GuestID, self.Address, self.Nickname, Request)  # sinon on la soumet à la fonction flow pour Samuel
 
     def Transmit(self, msg):
-        '''Cette fonction permet à mes camarades d'envoyer du contenu tel qu'une chaine de caractères (un tuple, une image, etc...) au client.
+        '''Cette fonction permet d'envoyer du contenu tel qu'une chaine de caractères (un tuple, une image, etc...) au client.
 
-        Par Joris Placette
+
         '''
         self.Message.append(msg)
 
@@ -112,9 +112,9 @@ class Guest(threading.Thread):
         ''' Classe chargée de l'envoi & récéption de donnée via le socket une fois le client Identifié.
         Elle s'occupe de la partie "veille" de la classe Net.
 
-        N'est pas concue pour être manipulée par Mes camarades.
 
-        Par Joris Placette
+
+
         '''
         self.DoComm = value  # variable permettant de stopper les échanges
         while self.DoComm == 1:
@@ -142,16 +142,15 @@ class Guest(threading.Thread):
 
     def WhoIsIt(self):
         '''Fonction retournant le Pseudonyme rensigné par l'utilisateur lors de la phase d'Identification.
-        Par Joris Placette
+
         '''
         return self.Nickname
 
     def run(self):
         '''Se lance automatiquement en thread.
 
-        N'est pas concue pour être manipulée par Mes camarades.
 
-        Par Joris Placette
+
         '''
         try:
             self.GetIdentified()
@@ -165,9 +164,9 @@ class Receptionist(threading.Thread):
     ''' Classe de threading chargée de récéptionner les conncetions des clients.
     concue pour être invoquée en 1 exemplaire par la classe ServerNet.
 
-    N'est pas concue pour être manipulée par Mes camarades.
 
-    Par Joris Placette
+
+
     '''
 
     def __init__(self, threadID, name):  # initiallisation des variables de l'objet nouvellement crée
@@ -194,7 +193,7 @@ def Flow(clientID, clientAddress, clientNick, data):
 
     pour envoyer un message à un client précis: MyClient[NicknameList['joris']].Transmit('Message!')
 
-    Par Joris Placette
+
     '''
     global cache
     cache = data
@@ -222,7 +221,7 @@ def SimpleHost():
     '''Fct de démonstration et de test.
     c'est un cadeau pour toi Samuel <3 ^^
 
-    Par Joris Placette
+
     '''
     MyServ = ServerNet()
     MyServ.Listen(True)

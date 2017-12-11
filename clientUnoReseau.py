@@ -1,6 +1,7 @@
 # -∗- coding: utf-8 -∗-
 global debug
-debug = False
+
+debug = False # mode verbeux ou non
 
 import pickle
 import socket
@@ -14,7 +15,7 @@ import UnoPOO
 
 def getNetworkInfos():
     '''Fct de démonstration et de test.
-    Par Joris Placette
+    
     '''
     host = input('''Saisir l' adresse du serveur (laisser vide pour une 127.0.0.1)  : ''')
     if host == '': host = "127.0.0.1"
@@ -49,11 +50,10 @@ class NetThread(threading.Thread):
     '''Classe-Thread chargé de l'envoi & récéption de donnée via le socket une fois le client identifié.
     Elle s'occupe de la partie "veille" de la classe Net.
 
-    N'est pas concue pour être manipulée par Mes camarades.
 
     Voir l' help(Net())
 
-    Par Joris Placette
+    
     '''
 
     def __init__(self):
@@ -65,7 +65,7 @@ class NetThread(threading.Thread):
 
         receptionPaquet(Request)
         # flow(Request)
-        # #extractiona =  des données pour qu'elles soient récupérées par Arthur
+        # #extractiona =  des données pour qu'elles soient récupérées r
 
     def run(self):
 
@@ -92,16 +92,16 @@ class NetThread(threading.Thread):
 
             except:
                 pass
-                # print("y'a un pb bb") #en cas de time-out on passe simplement à la suite
+                #en cas de time-out on passe simplement à la suite
             if self.thereIsSomeNewData:
                 self.__RequestTreatment(data)  # J'ai sorti la fonction du try; pour rendre le débuggage possible
             self.thereIsSomeNewData = False
 
 
 class Net():
-    '''Classe interactive (API) pour mes camarades, se charge de mettre en forme les interactions client-serveurr pour une utilisation simplifiée des fonctionnallités socket.
+    '''Classe interactive se charge de mettre en forme les interactions client-serveurr pour une utilisation simplifiée des fonctionnallités socket.
 
-    Par Joris Placette
+
     '''
 
     def __init__(self, Host, Port, Nickname, Pass):
@@ -116,7 +116,7 @@ class Net():
         self.port = Port
         self.nickname = Nickname  # La Gui indique Pseudo au lieu de nickname, doit mesurer 10 charactères ou moins
         self.nickLen = str(len(self.nickname))  # calcul de la longueur du Pseudonyme
-        self.password = Pass  # le pas ne sert pas durant la phase d'identification du client, j'ai cependant implanté cette variable si mes camarades en ont besoin
+        self.password = Pass  # le pas ne sert pas durant la phase d'identification du client
         self.connected = False
         self.__NetThread = NetThread()
         self.__NetThread.start()  # Démarrage du thread chargé d'éccouter et de shipper les messages
@@ -125,7 +125,7 @@ class Net():
         '''Envoie une requette d'identification.
         Necessaire coté serveur c'est la première chose à faire après avoir initialisé Net.
 
-        Par Joris Placette
+
         '''
         data = bytes("IDTF" + self.nickLen + self.nickname,
                      'utf8')  # on crée la chaine d'info d'identification comme "IDTF7exemple"
@@ -146,14 +146,13 @@ class Net():
     def connected(self):
         '''Affiche le statut du client vis à vis du serveur
 
-        Par Joris Placette
         '''
         return self.connected
 
     def disconnect(self):
         '''Force la fermeture de la connexion, rends impossible l'entrée et la sortie de données.
 
-        Par Joris Placette
+
         '''
         Sock.close()  # rends impossible l'entrée et la sortie de données.
         print("Déconnection")
@@ -163,11 +162,8 @@ class Net():
 
         /!\ : Pour le moment les messages sont transmis toute les 2sec et non empillés, donc en cas de spam des messages seront perdus :/
 
-        /!\ : Version DEV :
-            Svp pay attention :) !
-            Si la Chaine est reconnue comme une ligne de code python alors elle est EXECUTEE.
 
-        Par Joris Placette
+
         '''
         self.__NetThread.Message.append(
             typed)  # transmett la chaine au thread, on nickname'execute pas de fonction sinon il faut attentdre la fin de celle-ci , on se contente donc de transmettre la donnée.
@@ -175,7 +171,7 @@ class Net():
     def whoAmI(self):
         '''Renvoie le Pseudonyme déclaré au serveur lors de l'__init__()
 
-        Par Joris Placette
+
         '''
         return self.nickname
 
@@ -188,7 +184,6 @@ def flow(request):
     Le traitement de ces données est une simple démonstration.
     Cette fonction permettra à Arthur de recevoir et traiter les données émises par les clients.
 
-    Par Joris Placette
     '''
 
 
@@ -199,7 +194,7 @@ def receptionPaquet(paquetIn):
     a.player[localID].nom = localNickname
 
     if localID == a.active:
-        print('''! ! !  A TOI DE JOUER ! ! !''')
+        print('''~~~~~  A TOI DE JOUER ~~~~~''')
         a.ask()
         paquetOut = a.pack()
         network.share(paquetOut)
