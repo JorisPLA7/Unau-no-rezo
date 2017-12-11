@@ -16,7 +16,7 @@ Jeu de Uno.
 #### Fichier uno.py :
 Jeu de uno basique, sans saveurs nin en tant que jeu ni en tant que programme.
 #### Fichier UnoPOO.py : 
-Jeu de Uno multijoueur local programmé en programmation orientée objet. (interface embarquée).
+Jeu de Uno multijoueur local programmé orienté objet. (interface embarquée).
 Note: ajout d'une interface graphique en cours...
 #### Fichier cleitnUnoReseau.py
 Client pour partie multijoueur en réseau.
