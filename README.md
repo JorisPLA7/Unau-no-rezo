@@ -13,8 +13,15 @@ Jeu de Uno.
 ## Librairies personnalisées 
 - lib/serveur
 
-Fichier uno.py : 
-  Jeu de uno basique, sans saveurs nin en tant que jeu ni en tant que programme.
+#### Fichier uno.py :
+Jeu de uno basique, sans saveurs nin en tant que jeu ni en tant que programme.
+#### Fichier UnoPOO.py : 
+Jeu de Uno multijoueur local programmé en programmation orientée objet. (interface embarquée).
+Note: ajout d'une interface graphique en cours...
+#### Fichier cleitnUnoReseau.py
+Client pour partie multijoueur en réseau.
+#### Fichier serveurMultiJoueur.py
+Serveur nécessaire aux parties mutijoueurs lancées avec clientUnoReseau.py.
   
 ## Lancement d'une partie de Jeu de Uno en multijoueur en ligne:
   - executer serveurMultiJoueur.py
