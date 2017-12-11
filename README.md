@@ -1,10 +1,20 @@
 # Unau
-Jeux de Uno.
+Jeu de Uno.
+
+## Librairies python3 utilisées installées par défaut avec python3 
+- socket
+- time
+- random
+- pickles
+- threading
+
+## Librairies personnalisées 
+- lib/serveur
 
 Fichier uno.py : 
   Jeu de uno basique, sans saveurs nin en tant que jeu ni en tant que programme.
   
-Lancement d'une partie de Jeu de Uno en multijoueur en ligne:
+## Lancement d'une partie de Jeu de Uno en multijoueur en ligne:
   - executer serveurMultiJoueur.py
 
 Pour chaque partie  
@@ -15,7 +25,7 @@ Pour chaque partie
 
 
 
-remarque de compréhension : 
+### remarque de compréhension : 
 
   cercle vertueux:
 
