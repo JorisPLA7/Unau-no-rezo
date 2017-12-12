@@ -32,8 +32,6 @@ Pour chaque partie
   - suivre les instructions pour chaque client
   - saisir 'go' pour lancer la partie sur le client 0
 
-## capture d'écran
-
 
 ### remarque de compréhension : 
 
@@ -43,11 +41,11 @@ Pour chaque partie
 
   - j
   
-  - a.pack()
+  - paquet = a.pack()
   
-  - myNet.Transmit()
+  - network.share(pauet)
   
-  - myNet.flow()
+  - network.flow()
   
   - a.receptionPaquet()
   
