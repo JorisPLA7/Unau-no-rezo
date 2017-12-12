@@ -6,12 +6,13 @@ broadcast = True  # ATTENTION DEF LE BROADCAST à VRAI OU FAUX EST INDISPENSABLE
 
 def SimpleHost():
     '''Fct de démonstration et de test.
-    c'est un cadeau pour toi Samuel <3 ^^
+
 
     Par Joris Placette
     '''
     MyServ = ServerNet()
     MyServ.Listen(True)
+
     print("Note : Vous pouvez effectuer plusieurs parties conséqutives sans redémarer le serveur.")
     print("Note : Ce serveur peut accueillir une partie à la fois.")
     print("Note : Pour Lancer une partie référez-vous au ReadMe joint avec les fichiers.")

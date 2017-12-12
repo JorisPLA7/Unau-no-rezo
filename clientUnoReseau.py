@@ -43,9 +43,6 @@ def getLocalID():
 # ------------------------client.py---------------------
 
 
-
-
-
 class NetThread(threading.Thread):
     '''Classe-Thread chargé de l'envoi & récéption de donnée via le socket une fois le client identifié.
     Elle s'occupe de la partie "veille" de la classe Net.

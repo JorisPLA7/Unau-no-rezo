@@ -1,6 +1,6 @@
 from random import *
 from tkinter import *
-
+import time
 
 ##Jeu
 class Jeu:
@@ -10,7 +10,7 @@ class Jeu:
     
     MonJeu=Jeu(True, "False", Nombre de joueur, Nombre de cartes au début)
          pour générer une nouvelle partie de Uno (qui reste en attente pour l'instant)
-         
+ or carte.val == self.comparaisonVal[i]
     MonJeu=Jeu(False, données)
          pour générer une partie à partir de données d'un autre jeu
          
@@ -49,7 +49,7 @@ class Jeu:
         self.player = []  # liste des joueurs
         for i in range(nombreJoueurs):
             self.player.append(Joueur(i))
-            paquet = self.player[i].main_depart(self)
+            paquet = self.player[i].main_depart(self,nombreCartes)
             self.unpack(paquet)
 
     def pioche(self):
@@ -264,8 +264,8 @@ class Joueur(Jeu):
 
         self.restrictions = []
 
-    def main_depart(self, jeu):
-        self.hand = [jeu.pioche() for i in range(7)]
+    def main_depart(self, jeu, nb):
+        self.hand = [jeu.pioche() for i in range(nb)]
         return jeu.pack()
 
     def answer(self, jeu):
@@ -326,11 +326,12 @@ class Joueur(Jeu):
         paquet = jeu.pack()
         return paquet
 
-    def setVictory(self):
+    def setVictory(self, jeu):
         print("Vous avez gagné, Bravo !")
-        jeu.player.pop[jeu.getActive()]
+        jeu.player.pop(jeu.getActive())
         jeu.nb_joueurs -= 1
-        return jeu
+        time.sleep(10)
+        exit()
 
     def pioche(self, jeu):
         # modifie le jeu
@@ -423,13 +424,12 @@ class Restriction:
         if len(self.comparaisonVal) >= 1:
             flag = False
             for i in self.comparaisonVal:
-                flag = flag or carte[0] == self.comparaisonVal[i]
-                flag = flag or carte[1] == self.comparaisonVal[i]
+                flag = flag or carte.typ == i or carte.val == i
+
 
             return flag
 
         return True
-
 
 class Carte(Jeu):
     def __init__(self, liste):
@@ -515,7 +515,7 @@ class Salamandre(Special):
             jeu.setNextPlayer(2)
 
         else:
-            rest = restriction(["Salamandre", "Cataclysme"], self)
+            rest = Restriction(["Salamandre", "Cataclysme"], self)
             jeu.player[nextPlayer].restrictions.append(rest)
 
         return joueur.pack(), jeu
@@ -573,7 +573,7 @@ class Cataclysme(Special):
             jeu.setNextPlayer(1)
 
         else:
-            rest = restriction(["Cataclysme"], self)
+            rest = Restriction(["Cataclysme"], self)
             jeu.player[nextPlayer].restrictions.append(rest)
 
         colors = ["Braises", "Cascade", "Bambous", "Lumière"]
@@ -834,5 +834,6 @@ if goGui :
 
 if __name__ == '__main__':
    nombreJoueurs = int(input("Veuillez saisir un nombre de joueurs :  "))
-   a = Jeu(True, "False", nombreJoueurs)
+   a = Jeu(True, "False", nombreJoueurs, 1)
+
    a.launch()
