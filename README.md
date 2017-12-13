@@ -13,20 +13,20 @@ Pthon3 POO Uno online multiplayer game.
 ## Custom libraries
 - lib / server
 
-#### uno.py file:
+#### unoSaveurVanille.py file:
 Basic uno game, without flavors nin as a game nor as a program.
 
 #### UnoPOO.py file:
 Local multiplayer Uno game programmed object oriented. (embedded interface).
 Note: adding a graphical interface ...
 
-#### File cleitnUnoReseau.py
+#### File clientUnoReseau.py
 Client for multiplayer networked game.
 
 #### MultiPlayer.py file
 Server required for mutiplayer games started with clientUnoReseau.py.
   
-## Launch of a game of Uno in online multiplayer:
+## Play online multiplayer:
   - Execute multiplayerServer.py
 
 For each party
