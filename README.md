@@ -1,5 +1,5 @@
 # Unau
-Pthon3 POO Uno online multiplayer game.
+Python3 POO Uno online multiplayer game.
 
 ![Graph](http://www.tuks.ovh/github_webpages/Unau-no-rezo/Capture.png)
 
