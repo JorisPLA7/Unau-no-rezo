@@ -1,41 +1,44 @@
 # Unau
-Jeu de Uno.
+Pthon3 POO Uno online multiplayer game.
 
 ![Graph](http://www.tuks.ovh/github_webpages/Unau-no-rezo/Capture.png)
 
-## Librairies python3 utilisées installées par défaut avec python3 
+## Python3 libraries used installed by default with python3
 - socket
 - time
 - random
 - pickles
 - threading
 
-## Librairies personnalisées 
-- lib/serveur
+## Custom libraries
+- lib / server
 
-#### Fichier uno.py :
-Jeu de uno basique, sans saveurs nin en tant que jeu ni en tant que programme.
-#### Fichier UnoPOO.py : 
-Jeu de Uno multijoueur local programmé orienté objet. (interface embarquée).
-Note: ajout d'une interface graphique en cours...
-#### Fichier cleitnUnoReseau.py
-Client pour partie multijoueur en réseau.
-#### Fichier serveurMultiJoueur.py
-Serveur nécessaire aux parties mutijoueurs lancées avec clientUnoReseau.py.
+#### uno.py file:
+Basic uno game, without flavors nin as a game nor as a program.
+
+#### UnoPOO.py file:
+Local multiplayer Uno game programmed object oriented. (embedded interface).
+Note: adding a graphical interface ...
+
+#### File cleitnUnoReseau.py
+Client for multiplayer networked game.
+
+#### MultiPlayer.py file
+Server required for mutiplayer games started with clientUnoReseau.py.
   
-## Lancement d'une partie de Jeu de Uno en multijoueur en ligne:
-  - executer serveurMultiJoueur.py
+## Launch of a game of Uno in online multiplayer:
+  - Execute multiplayerServer.py
 
-Pour chaque partie  
-  - executer clientUnoReseau.py (1 par joueur/poste)
-  - chaque client doit saisir un id différent à partir de 0
-  - suivre les instructions pour chaque client
-  - saisir 'go' pour lancer la partie sur le client 0
+For each party
+  - run clientUnoReseau.py (1 per player / post)
+  - each customer must enter a different id from 0
+  - follow the instructions for each client
+  - type 'go' to start the game on the client 0
 
 
-### remarque de compréhension : 
+### note of understanding:
 
-  cercle vertueux:
+  virtuous circle:
 
   - a = monjeu(True, 4)
 
