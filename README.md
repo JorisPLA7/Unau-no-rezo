@@ -57,3 +57,8 @@ For each party
   - a.pack()
 
   - goto j :)
+  
+  ## Creators
+  
+  - Joris Placette - joris@placette.fr
+  - Matéo Perez
