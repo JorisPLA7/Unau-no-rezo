@@ -60,5 +60,5 @@ For each party
   
   ## Creators
   
-  - Joris Placette - joris@placette.fr
+  - Joris Placette - jorisplacette.fr
   - Matéo Perez
